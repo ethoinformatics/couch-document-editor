@@ -1,0 +1,27 @@
+<ul class="fields">
+	<li>
+		<label for="database">Database</label>
+		<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/mike_demo"></input>
+	</li>
+	<li>
+		<label for="_id">ID</label>
+		<input id="_id" type="text" value="01221976"></input>
+	</li>
+	<li>
+		<label for="_rev">REV</label>
+		<input id="_rev" type="text"></input>
+	</li>
+</div>
+<div class="verbs">
+	<button class="js-put put" type="button">PUT</button>
+	<button class="js-get get" type="button">GET</button>
+	<button class="js-post post" type="button">POST</button>
+	<button class="js-delete delete" type="button">DELETE</button>
+</div>
+<div>
+	<textarea style="height: 300px; width: 80%;"></textarea>
+</div>
+<div class="js-url url">
+</div>
+<div class="js-message message">
+</div>
