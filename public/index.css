@@ -1,0 +1,54 @@
+.fields {
+  list-style-type: none;
+}
+.fields li {
+  padding: 6px;
+}
+.fields label {
+  display: inline-block;
+  width: 80px;
+}
+.fields input {
+  width: 400px;
+  padding: 8px;
+}
+.verbs {
+  padding: 12px;
+}
+.verbs button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 16.795%;
+  /* auto */
+  text-align: center;
+}
+.verbs .put {
+  background-color: #c5862b;
+}
+.verbs .get {
+  background-color: #0f6ab4;
+}
+.verbs .post {
+  background-color: #10a54a;
+}
+.verbs .delete {
+  background-color: #a41e22;
+}
+.url,
+.message {
+  font-size: 20px;
+}

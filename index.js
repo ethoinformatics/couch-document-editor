@@ -1,5 +1,3 @@
-require('./index.less');
-
 var tmpl = require('./index.vash');
 var $ = require('jquery');
 var request = require('superagent');
