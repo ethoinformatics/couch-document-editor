@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var map, jsonView;
+var map, geoJsonLayer;
 
 function _ensureMap(){
 	var $mapContainer = $('.map-container');
@@ -10,7 +10,7 @@ function _ensureMap(){
 		northEast = L.latLng(-12.5653, 29.4708),
 		bounds = L.latLngBounds(southWest, northEast);
 
-	var map = L.map('map',{
+	map = L.map('map',{
 		maxBounds: bounds,
 	}).setView([-13.4484, 28.072], 10);
 
@@ -30,12 +30,12 @@ function _ensureMap(){
 function _showGeoJSON(geojson){
 	_ensureMap();
 
-	if (jsonView){
-		// clear json view
+	if (geoJsonLayer){
+		map.removeLayer(geoJsonLayer);
 	}
 
-	// load the json here
-	//
+	geoJsonLayer = L.geoJson(geojson);
+	geoJsonLayer.addTo(map);
 	
 }
 
