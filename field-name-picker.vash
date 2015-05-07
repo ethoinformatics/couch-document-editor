@@ -1,0 +1,12 @@
+<div class="field-name-picker">
+	<select>
+		<option> --- </option>
+		@model.fieldNames.forEach(function(fieldName){
+			<option>@fieldName</option>
+		})
+	</select>
+	<div>
+		<button class="js-okay">OK</button>
+		<button class="js-cancel">Cancel</button>
+	</div>
+</div>

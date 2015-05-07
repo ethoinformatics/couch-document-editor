@@ -21,6 +21,9 @@
 <div>
 	<textarea style="height: 300px; width: 80%;"></textarea>
 </div>
+<div>
+	<a id="render-geojson" class="render-geojson">Render GeoJSON</a>
+</div>
 <div class="js-url url">
 </div>
 <div class="js-message message">

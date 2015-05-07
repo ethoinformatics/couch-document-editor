@@ -1,25 +1,20 @@
-var tmpl = require('./index.vash');
-var $ = require('jquery');
-var request = require('superagent');
-var storage = require('jocal');
+var tmpl = require('./index.vash'),
+	$ = require('jquery'),
+	request = require('superagent'),
+	storage = require('jocal'),
+	FieldNamePicker = require('./field-name-picker.js');
 
-var $btnGet, $btnPut, $btnPost, $btnDelete;
 $(function(){
 	$('body').append(tmpl({}));
-
-	$btnGet = $('.js-get');
-	$btnPut = $('.js-put');
-	$btnPost = $('.js-post');
-	$btnDelete = $('.js-delete');
 
 	var $database = $('#database'),
 		$id = $('#_id'),
 		$rev = $('#_rev'),
 		$textArea = $('textarea');
 
-	[$database, $id].map(_rememberInput);
+	[$database, $id, $textArea].map(_rememberInput);
 
-	$btnGet.click(function(){
+	$('.js-get').click(function(){
 		request.get($database.val()+'/'+$id.val())
 			.type('json')
 			.end(function(err, res){
@@ -37,7 +32,7 @@ $(function(){
 			});
 	});
 
-	$btnPut.click(function(){
+	$('.js-put').click(function(){
 		var o = JSON.parse($textArea.val());
 		request.put($database.val()+'/'+$id.val())
 			.type('json')
@@ -58,7 +53,7 @@ $(function(){
 			});
 	});
 
-	$btnPost.click(function(ev){
+	$('.js-post').click(function(){
 		var o = JSON.parse($textArea.val());
 		request.post($database.val())
 			.type('json')
@@ -79,7 +74,7 @@ $(function(){
 			});
 	});
 
-	$btnDelete.click(function(){
+	$('.js-delete').click(function(){
 		request.del($database.val()+'/'+$id.val())
 			.type('json')
 			.query({rev: $rev.val()})
@@ -90,6 +85,17 @@ $(function(){
 
 				_showSuccess(res);
 			});
+	});
+
+	$('#render-geojson').click(function(){
+		var o = JSON.parse($textArea.val());
+		if (!o) return;
+
+		var fieldNamePicker = new FieldNamePicker(o);
+		$('body').append(fieldNamePicker.$element);
+		fieldNamePicker.on('picked', function(geoJson){
+			console.dir(geoJson);
+		});
 	});
 });
 
