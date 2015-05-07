@@ -2,7 +2,8 @@ var tmpl = require('./index.vash'),
 	$ = require('jquery'),
 	request = require('superagent'),
 	storage = require('jocal'),
-	FieldNamePicker = require('./field-name-picker.js');
+	FieldNamePicker = require('./field-name-picker.js'),
+	geoJsonViewer = require('./geojson-viewer.js');
 
 $(function(){
 	$('body').append(tmpl({}));
@@ -94,7 +95,8 @@ $(function(){
 		var fieldNamePicker = new FieldNamePicker(o);
 		$('body').append(fieldNamePicker.$element);
 		fieldNamePicker.on('picked', function(geoJson){
-			console.dir(geoJson);
+			geoJsonViewer(geoJson);
+
 		});
 	});
 });

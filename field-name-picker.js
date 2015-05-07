@@ -34,6 +34,7 @@ function FieldNamePicker(obj){
 		$element.remove();
 		self.emit('picked', o);
 	}
+
 	$element.find('.js-okay').click(function(){
 		var key = $element.find('select').val(),
 			geojson = obj;
