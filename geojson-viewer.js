@@ -18,8 +18,8 @@ function _ensureMap(){
 	//L.tileLayer('img/MapQuest/{z}/{x}/{y}.jpg', {
 	L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
 		id: 'examples.map-i875mjb7',
-		maxZoom: 14,
-		minZoom: 8,
+		// maxZoom: 14,
+		// minZoom: 8,
 	}).addTo(map);
 
 	$('.js-close-map').click(function(){
@@ -36,6 +36,7 @@ function _showGeoJSON(geojson){
 
 	geoJsonLayer = L.geoJson(geojson);
 	geoJsonLayer.addTo(map);
+	map.fitBounds(geoJsonLayer.getBounds());
 	
 }
 
