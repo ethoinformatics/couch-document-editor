@@ -1,7 +1,7 @@
 <ul class="fields">
 	<li>
 		<label for="database">Database</label>
-		<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/mike_demo"></input>
+		<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/pp_geo"></input>
 	</li>
 	<li>
 		<label for="_id">ID</label>
