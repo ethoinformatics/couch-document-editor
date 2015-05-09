@@ -12302,8 +12302,19 @@ $(function(){
 			});
 	});
 
+	function getObject(){
+		var o ;
+		
+		try {
+			o= JSON.parse($textArea.val());
+		}
+		catch (e){
+			_showError(new Error('JSON is not formatted correctly.'));
+		}
+	}
 	$('.js-put').click(function(){
-		var o = JSON.parse($textArea.val());
+		var o = getObject();
+		if (!o) return;
 		request.put($database.val()+'/'+$id.val())
 			.type('json')
 			.send(o)
@@ -12324,7 +12335,8 @@ $(function(){
 	});
 
 	$('.js-post').click(function(){
-		var o = JSON.parse($textArea.val());
+		var o = getObject();
+		if (!o) return;
 		request.post($database.val())
 			.type('json')
 			.send(o)
@@ -12375,7 +12387,9 @@ function _showUrl(res){
 }
 
 function _showError(err, res){
-	_showUrl(res);
+	if (res)
+		_showUrl(res);
+
 	$('.js-message').css('color', 'red')
 		.text(err.toString());
 }
