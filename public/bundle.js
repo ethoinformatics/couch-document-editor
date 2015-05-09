@@ -12307,6 +12307,7 @@ $(function(){
 		
 		try {
 			o= JSON.parse($textArea.val());
+			return o;
 		}
 		catch (e){
 			_showError(new Error('JSON is not formatted correctly.'));
