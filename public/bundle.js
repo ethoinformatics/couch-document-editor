@@ -11952,7 +11952,7 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.vl = 4, html.vc = 1;
         __vbuffer.push('\t');
         html.vl = 4, html.vc = 2;
-        __vbuffer.push('<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/mike_demo">');
+        __vbuffer.push('<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/etho_demo">');
         html.vl = 4, html.vc = 90;
         __vbuffer.push('</input>');
         html.vl = 4, html.vc = 98;
@@ -12140,7 +12140,7 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
         return __vopts && __vopts.asContext ? html : html.toString();
     } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<ul class="fields">!LB!\t<li>!LB!\t\t<label for="database">Database</label>!LB!\t\t<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/mike_demo"></input>!LB!\t</li>!LB!\t<li>!LB!\t\t<label for="_id">ID</label>!LB!\t\t<input id="_id" type="text" value="01221976"></input>!LB!\t</li>!LB!\t<li>!LB!\t\t<label for="_rev">REV</label>!LB!\t\t<input id="_rev" type="text"></input>!LB!\t</li>!LB!</div>!LB!<div class="verbs">!LB!\t<button class="js-put put" type="button">PUT</button>!LB!\t<button class="js-get get" type="button">GET</button>!LB!\t<button class="js-post post" type="button">POST</button>!LB!\t<button class="js-delete delete" type="button">DELETE</button>!LB!</div>!LB!<div>!LB!\t<textarea style="height: 300px; width: 80%;"></textarea>!LB!</div>!LB!<div>!LB!\t<a id="render-geojson" class="render-geojson">Render GeoJSON</a>!LB!</div>!LB!<div class="js-url url">!LB!</div>!LB!<div class="js-message message">!LB!</div>!LB!');
+        html.reportError(e, html.vl, html.vc, '<ul class="fields">!LB!\t<li>!LB!\t\t<label for="database">Database</label>!LB!\t\t<input id="database" type="text" value="http://demo.ethoinformatics.org:5984/etho_demo"></input>!LB!\t</li>!LB!\t<li>!LB!\t\t<label for="_id">ID</label>!LB!\t\t<input id="_id" type="text" value="01221976"></input>!LB!\t</li>!LB!\t<li>!LB!\t\t<label for="_rev">REV</label>!LB!\t\t<input id="_rev" type="text"></input>!LB!\t</li>!LB!</div>!LB!<div class="verbs">!LB!\t<button class="js-put put" type="button">PUT</button>!LB!\t<button class="js-get get" type="button">GET</button>!LB!\t<button class="js-post post" type="button">POST</button>!LB!\t<button class="js-delete delete" type="button">DELETE</button>!LB!</div>!LB!<div>!LB!\t<textarea style="height: 300px; width: 80%;"></textarea>!LB!</div>!LB!<div>!LB!\t<a id="render-geojson" class="render-geojson">Render GeoJSON</a>!LB!</div>!LB!<div class="js-url url">!LB!</div>!LB!<div class="js-message message">!LB!</div>!LB!');
     }
 }, {
     'simple': false,
